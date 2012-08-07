@@ -13,7 +13,6 @@ describe Kazoo::Auth do
     subject { Kazoo::Auth.new }
   end
 
-
   describe '#initialize' do
     specify { subject.api_key.length.should eq 64 }
     specify { subject.host.should eq 'api.2600hz.com' }
