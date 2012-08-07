@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require "kazoo/version"
 
 Gem::Specification.new do |s|
-  s.name        = "kazoo"
+  s.name        = "kazoo-rb"
   s.version     = Kazoo::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Zhao Lu"]
@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency("nestful")
 
+  s.add_development_dependency('rake')
   s.add_development_dependency("rspec")
   s.add_development_dependency("webmock")
 end
