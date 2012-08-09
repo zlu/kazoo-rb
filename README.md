@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/zlu/kazoo-rb.png)](http://travis-ci.org/zlu/kazoo-rb)
+
 Kazoo-rb
 ====
 
