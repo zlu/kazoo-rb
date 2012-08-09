@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Kazoo::Conference do
   before do
     Kazoo::Auth.any_instance.should_receive(:token).any_number_of_times.and_return('valid-token')
-    @auth = Kazoo::Auth.new
+    @auth = Kazoo::Auth.new(kazoo_config)
     @phone_numbers = ['+14151112222']
     @name = 'my super duper conference'
     @conference_numbers = ['1234']

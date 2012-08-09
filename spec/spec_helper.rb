@@ -4,9 +4,6 @@ require 'kazoo'
 
 RSpec.configure do |config|
   config.include RSpec::Matchers
-  config.before do
-    Kazoo::Auth.any_instance.stub(:init_config).and_return(kazoo_config)
-  end
 end
 
 def kazoo_config

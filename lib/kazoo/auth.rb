@@ -4,8 +4,7 @@ module Kazoo
   class Auth
     attr_reader :api_key, :host, :port, :version, :token, :account_id
 
-    def initialize
-      kazoo_config = init_config
+    def initialize(kazoo_config)
       @api_key = kazoo_config['api_key']
       @host = kazoo_config['host']
       @port = kazoo_config['port']
@@ -24,12 +23,6 @@ module Kazoo
       end
 
       @token
-    end
-
-    private
-
-    def init_config
-      YAML.load(File.open(File.join(File.expand_path("../..", __FILE__), 'kazoo.yml')))
     end
   end
 end
