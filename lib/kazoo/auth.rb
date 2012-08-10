@@ -1,5 +1,3 @@
-require 'open-uri'
-
 module Kazoo
   class Auth
     attr_reader :api_key, :host, :port, :version, :token, :account_id
