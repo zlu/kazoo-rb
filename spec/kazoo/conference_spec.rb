@@ -36,7 +36,19 @@ describe Kazoo::Conference do
     end
 
     context 'and fails' do
-      it 'should return error'
+      it 'should raise error' do
+        pending 'need to think about how to test error cases'
+        response = mock('response')
+        response.body = {:data => 'some error'}.to_json
+        stub_request(:put, "http://api.2600hz.com:8000/v1/accounts/#{@auth.account_id}/callflows").
+            with(:headers => {'Accept' => '*/*', 'User-Agent' => 'Ruby', 'Content-Type' => 'application/json'},
+                 :body => {:data => {:numbers => @phone_numbers, :flow => {:module => "conference", :data => {}, :children => {}}}, :auth_token => @auth.token}).
+            to_raise(Nestful::ConnectionError.new(response))
+
+        lambda {
+          subject.create_callflow(@phone_numbers)
+        }.should raise_error
+      end
     end
   end
 
